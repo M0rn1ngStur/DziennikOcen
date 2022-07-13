@@ -52,5 +52,12 @@ namespace DziennikOcen
             mainWindow.Show();
             this.Close();
         }
+
+        private void newAttendance(object sender, RoutedEventArgs e)
+        {
+            Window addAttendance = new AddAttendance();
+            addAttendance.Show();
+            this.Close();
+        }
     }
 }

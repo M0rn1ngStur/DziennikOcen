@@ -32,5 +32,12 @@ namespace DziennikOcen
             mainWindow.Show();
             this.Close();
         }
+
+        private void newClass(object sender, RoutedEventArgs e)
+        {
+            Window addClass = new AddClass();
+            addClass.Show();
+            this.Close();
+        }
     }
 }

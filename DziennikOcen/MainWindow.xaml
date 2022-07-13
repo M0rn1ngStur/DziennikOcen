@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" HorizontalAlignment="Center">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="237" Width="474" Margin="0,69,0,0">
-
+        <Button Click="showAttendances" Content="Pokaż frekwencje" Width="129" Height="23" Margin="168,129,168,10" />
+        <Button Click="showClasses" Content="Pokaż zajęcia" Width="129" Height="23" Margin="168,90,168,49"/>
+        <Button Click="showGrades" Content="Pokaż oceny" Width="129" Height="23" Margin="168,50,168,89"/>
+        <Button Click="showStudents" Content="Pokaż studentów"  Width="129" Height="23" Margin="168,10,168,129"/>
     </Grid>
 </Window>

@@ -25,5 +25,29 @@ namespace DziennikOcen
             InitializeComponent();
         }
 
+        private void showStudents(object sender, RoutedEventArgs e)
+        {
+            Window showStudents = new ShowStudents();
+            showStudents.Show();
+            this.Close();
+        }
+        private void showAttendances(object sender, RoutedEventArgs e)
+        {
+            Window showAttendances = new ShowAttendances();
+            showAttendances.Show();
+            this.Close();
+        }
+        private void showClasses(object sender, RoutedEventArgs e)
+        {
+            Window showClasses = new ShowClasses();
+            showClasses.Show();
+            this.Close();
+        }
+        private void showGrades(object sender, RoutedEventArgs e)
+        {
+            Window showGrades = new ShowGrades();
+            showGrades.Show();
+            this.Close();
+        }
     }
 }

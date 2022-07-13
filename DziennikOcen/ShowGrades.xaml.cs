@@ -42,5 +42,11 @@ namespace DziennikOcen
             this.Close();
         }
 
+        private void newGrade(object sender, RoutedEventArgs e)
+        {
+            Window newGrade = new AddGrade();
+            newGrade.Show();
+            this.Close();
+        }
     }
 }
