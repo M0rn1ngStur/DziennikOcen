@@ -1,0 +1,33 @@
+﻿<Window x:Class="DziennikOcen.AddAttendance"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DziennikOcen"
+        mc:Ignorable="d"
+        Title="AddAttendance" Height="450" Width="800">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Width="129" Margin="10,10,0,0">
+            <Button Click="goBack" Content="Powrót" VerticalAlignment="Top"/>
+            <Button Click="submit" Content="Zatwierdź" VerticalAlignment="Top" Margin="0,25,0,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Margin="144,10,0,0" Width="656">
+            <Grid Margin="0,0,0,354">
+                <Label HorizontalAlignment="Left" Width="200">Id Studenta</Label>
+                <TextBox Name="StudentId" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="37" Margin="0,27,0,0"/>
+            </Grid>
+            <Grid Margin="0,70,0,288" RenderTransformOrigin="0.495,1.544" HorizontalAlignment="Center" Width="656">
+                <Label HorizontalAlignment="Left" Width="200">Id zajęć</Label>
+                <TextBox Name="ClassId" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="37" Margin="0,24,0,0"/>
+            </Grid>
+            <Grid Margin="0,136,0,220" RenderTransformOrigin="0.495,1.544" HorizontalAlignment="Center" Width="656">
+                <Label HorizontalAlignment="Left" Width="200">Data</Label>
+                <TextBox Name="Date" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="37" Margin="0,24,0,0"/>
+            </Grid>
+            <Grid Margin="0,204,10,152" RenderTransformOrigin="0.495,1.544">
+                <Label HorizontalAlignment="Left" Width="200">Frekwencja(true/false)</Label>
+                <TextBox Name="Attendance1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="37" Margin="0,25,0,0"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
