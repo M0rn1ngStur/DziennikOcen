@@ -1,0 +1,25 @@
+﻿<Window x:Class="DziennikOcen.ShowGrades"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DziennikOcen"
+        mc:Ignorable="d"
+        Title="ShowGrades" Height="450" Width="800">
+    <Grid>
+        <ListView Name="List" Margin="156,0,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Grade1" DisplayMemberBinding="{Binding Grade1}"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="GroupSymbol" DisplayMemberBinding="{Binding GroupSymbol}"/>
+                    <GridViewColumn Header="ClassName" DisplayMemberBinding="{Binding ClassName}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Margin="10,10,644,10">
+            <Button Click="goBack" Content="Powrót" HorizontalAlignment="Stretch" Height="23" VerticalAlignment="Top" />
+        </Grid>
+    </Grid>
+</Window>
