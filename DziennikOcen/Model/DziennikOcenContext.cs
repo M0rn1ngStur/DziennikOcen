@@ -26,7 +26,7 @@ namespace DziennikOcen.Model
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=DziennikOcen;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DziennikOcen;");
             }
         }
 
@@ -34,7 +34,17 @@ namespace DziennikOcen.Model
         {
             modelBuilder.Entity<Attendance>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.ToTable("Attendance");
+
+                entity.Property(e => e.Attendance1).HasColumnName("attendance");
+
+                entity.Property(e => e.ClassId).HasColumnName("classId");
+
+                entity.Property(e => e.Date)
+                    .HasColumnType("datetime")
+                    .HasColumnName("date");
+
+                entity.Property(e => e.StudentId).HasColumnName("studentId");
 
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.Attendances)
@@ -45,12 +55,19 @@ namespace DziennikOcen.Model
 
             modelBuilder.Entity<Class>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.ClassName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("className");
             });
 
             modelBuilder.Entity<Grade>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.ClassId).HasColumnName("classId");
+
+                entity.Property(e => e.Grade1).HasColumnName("grade");
+
+                entity.Property(e => e.StudentId).HasColumnName("studentId");
 
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.Grades)
@@ -67,7 +84,15 @@ namespace DziennikOcen.Model
 
             modelBuilder.Entity<Student>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.GroupSymbol)
+                    .HasMaxLength(3)
+                    .IsUnicode(false)
+                    .HasColumnName("groupSymbol");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("name");
             });
 
             OnModelCreatingPartial(modelBuilder);
